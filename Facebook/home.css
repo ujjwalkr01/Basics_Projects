@@ -1,0 +1,110 @@
+*{
+    font-family: sans-serif;
+}
+.logo{
+    height: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.create{
+    color: #1c1e21;
+    font-size: 30px;
+    font-weight: bold; 
+    margin: auto;
+    text-align: center;
+}
+.its{
+    color: #606770;
+    text-align: center;
+    margin: auto;
+}
+.form-container{
+    padding: 16px;
+}
+#firstname,#lastname,#mobemail,#password{
+    font-size: 15px;
+    line-height: 15px;
+    padding: 11px;
+    border-radius: 4px;
+    border: none;
+    background-color: #f8f4f4;
+}
+#number{
+    background: #ffffff;
+    padding: 0px 20px 0px 8px;
+}
+#month,#year{
+    background: #ffffff;
+    padding: 0px 20px 0px 8px;
+    margin: 0px 0px 0px 12px;
+}
+.dob,#gendr{
+    color: #606770;
+    margin: 2px 0px 4px;
+}
+.gend{
+    box-sizing: border-box;
+    border-radius: 6px;
+    border: none;
+    color: #1c1e21;
+    display: inline-block;
+    padding: 0px 28px 0px 10px;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 36px;
+}
+.gen{
+    color: #ffffff;
+}
+.but{
+    background: none;
+    background-color: #00a400;
+    border: none;
+    border-radius: 6px;
+    box-shadow: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    height: 36px;
+    margin: auto;
+    display: block;    
+    line-height: 126%;
+    text-shadow: none;
+    padding: 0px 60px;
+}
+.button a{
+    padding: 10px 0px;
+    margin-left: 110px;
+    color: #1877f2;
+    font-size:17px ;
+}
+.footer{
+    color: #777777;
+    font-size: 11px;
+    margin: 11px 0px;
+}
+.footer .f_container{
+    
+    margin: 1em;
+    display: block;
+    margin-block-start: 1em ;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+.footer .f_container a{
+    text-decoration: none;
+}
+#number,#month,#year{
+    box-sizing: border-box;
+    border-radius: 6px;
+    border: none;
+    color: #1c1e21;
+    display: inline-block;
+    padding: 0px 28px 0px 10px;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 36px;
+    background-color: #f8f4f4;
+}

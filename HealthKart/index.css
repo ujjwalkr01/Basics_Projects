@@ -1,0 +1,34 @@
+*{
+    font-family: sans-serif;
+}
+.sub-class{
+    background: #eff4fd;
+    
+}
+.sub-class-class{
+    background: rgb(255, 255, 255);
+}
+.items-name{
+    font-size: 14px;
+}
+.price{
+    font-weight: bold;
+}
+.discount{
+    color: green;
+    font-weight: bold;
+}
+del{
+    color: grey;
+}
+.button{
+    font-size: 15px;
+    color: #FF8914;
+    background: #FFF9F4;
+    padding: 12px 75px;
+    border-color:#FF8914 ;
+    display:block;
+    margin:auto ;
+    border-radius: 10px;    
+    font-weight: bold;
+}
