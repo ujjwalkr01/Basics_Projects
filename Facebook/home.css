@@ -39,6 +39,14 @@
     padding: 0px 20px 0px 8px;
     margin: 0px 0px 0px 12px;
 }
+select{
+    font-size: 15px;
+    line-height: 15px;
+    padding: 11px;
+    border-radius: 4px;
+    border: none;
+    background-color: #f81d1d;
+}
 .dob,#gendr{
     color: #606770;
     margin: 2px 0px 4px;
