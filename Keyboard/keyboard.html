@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keyboard</title>
+    <style>
+        .container{
+            border: solid 1px black;
+            width: 60%;
+            background-color: black;
+            border-radius: 6px;
+            padding: 10px;
+            padding-left: 15px;
+            margin: auto;
+            margin-top: 150px;
+
+        }
+        .container>div:first-child>button:last-child,
+        .container>div:nth-child(2)>button:last-child{
+            width: 70px;
+        }
+        .container>div>button{
+            color: whitesmoke;
+            width: 50px;
+            margin-top: 10px;
+            margin-left: 10px;
+            padding: 10px;
+            border-radius: 4px;
+            border: none;
+            font-weight: bold;
+            background-color: grey;
+        }
+
+        .container>div:nth-child(3)>button:last-child,
+        .container>div:nth-child(4)>button:last-child{
+            width: 135px;
+        }
+
+        .container>div:last-child>button{
+            margin-bottom: 10px;
+        }
+        .container>div:last-child>button:nth-child(4){
+            width: 325px;
+        }
+        .container>div>button:hover{
+            box-shadow: rgba(240, 13, 13, 0.904) 0px 54px 55px, rgba(252, 11, 11, 0.979) 0px -12px 30px, rgba(240, 9, 9, 0.897) 0px 4px 6px, rgba(245, 83, 83, 0.918) 0px 12px 13px, rgba(238, 208, 208, 0.932) 0px -3px 5px;
+        }
+        .container>div:nth-child(3)>button:nth-child(2),.container>div:nth-child(3)>button:nth-child(3),.container>div:nth-child(3)>button:nth-child(4){
+            background-color: rgb(127, 6, 241);
+            color: black;
+        }
+        .container>div:nth-child(2)>button:nth-child(3){
+            background-color: rgb(127, 6, 241);
+            color: black;
+        }
+
+
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <button>~</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>0</button>
+        <button>delete</button>
+      </div>
+
+      <div>
+        <button>Tab</button>
+        <button>Q</button>
+        <button>W</button>
+        <button>E</button>
+        <button>R</button>
+        <button>T</button>
+        <button>Y</button>
+        <button>U</button>
+        <button>I</button>
+        <button>O</button>
+        <button>P</button>
+        <button>/</button>
+      </div>
+
+      <div>
+        <button>Caps</button>
+        <button>A</button>
+        <button>S</button>
+        <button>D</button>
+        <button>F</button>
+        <button>G</button>
+        <button>H</button>
+        <button>J</button>
+        <button>K</button>
+        <button>L</button>
+        <button>Enter</button>
+      </div>
+
+      <div>
+        <button>Shift</button>
+        <button>Z</button>
+        <button>X</button>
+        <button>C</button>
+        <button>V</button>
+        <button>B</button>
+        <button>N</button>
+        <button>M</button>
+        <button><</button>
+        <button>></button>
+        <button>Shift</button>
+      </div>
+      <div>
+        <button>Ctrl</button>
+        <button>Win</button>
+        <button>Alt</button>
+        <button>space</button>
+        <button>Alt</button>
+        <button>Ctrl</button>
+        <button><-</button>
+        <button>-></button>
+      </div>
+    </div>
+  </body>
+</html>
