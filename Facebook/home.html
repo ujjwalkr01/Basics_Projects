@@ -20,17 +20,17 @@
       >
         <div class="heading">
           <p class="create">Create a new account</p>
-          <p class="its">It's quick and easy</p>
+          <p class="its">It's quick and easy.</p>
 
           <div class="form-container">
             <main>
-              <form>
+              <form action="https://www.facebook.com/login/?privacy_mutation_token=eyJ0eXBlIjowLCJjcmVhdGlvbl90aW1lIjoxNjgxMjM4ODg3LCJjYWxsc2l0ZV9pZCI6MjY5NTQ4NDUzMDcyMDk1MX0%3D" method="post" autocomplete="on"> 
                 <input
                   id="firstname"
                   type="text"
                   required
                   placeholder="First name"
-                  style="width: 170px"
+                  autocomplete="on"
                 />
 
                 <input
@@ -38,7 +38,7 @@
                   type="text"
                   required
                   placeholder="Last name"
-                  style="width: 170px; margin-left: 10px"
+                  style="margin-left: 10px"
                 />
                 <br /><br />
 
@@ -60,8 +60,10 @@
                 />
                 <br /><br />
                 <section class="date_birth">
-                  <label class="dob">Date of birth<b>?</b></label
+                  <legend class="dob">birthday<b> ?</b></legend
                   ><br />
+            <div class="DOB">      
+              <div class="date">
                   <select id="number">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -95,6 +97,8 @@
                     <option value="30">30</option>
                     <option value="31">31</option>
                   </select>
+                </div>
+                <div class="mon">  
                   <select id="month">
                     <option value="Jan">Jan</option>
                     <option value="Feb">Feb</option>
@@ -109,6 +113,8 @@
                     <option value="Nov">Nov</option>
                     <option value="Dec">Dec</option>
                   </select>
+                </div>
+                <div class="yrr">  
                   <select id="year">
                     <option value="1940">1940</option>
                     <option value="1941">1941</option>
@@ -195,24 +201,26 @@
                     <option value="2022">2022</option>
                     <option value="2023">2023</option>
                   </select>
+                </div>  
+              </div>  
                   <br /><br />
                 </section>
 
                 <section class="gender">
-                  <label for="gender" id="gendr">Gender<b>?</b></label
-                  ><br />
-                  <button class="gend" value="Female">
+                  <legend class="gendr">Gender<b> ?</b></legend>
+                  <br />
+                  <div class="gend" value="Female">
                     Female
                     <input name="a" type="radio" clas="gen" />
-                  </button>
-                  <button class="gend" value="Male" style="margin-left: 20px">
+                  </div>
+                  <div class="gend" value="Male" style="margin-left: 20px">
                     Male
                     <input name="a" type="radio" class="gen" />
-                  </button>
-                  <button class="gend" value="Custom" style="margin-left: 20px">
+                  </div>
+                  <div class="gend" value="Custom" style="margin-left: 20px">
                     Custom
                     <input name="a" type="radio" class="gen" />
-                  </button>
+                  </div>
                 </section>
 
                 <section class="footer">
