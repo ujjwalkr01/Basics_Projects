@@ -55,7 +55,28 @@
             background-color: rgb(127, 6, 241);
             color: black;
         }
+        
+        button{
+          animation-name: myanimation1;
+          animation-duration: 2s;
+          animation-iteration-count: infinite;
+          animation-timing-function: ease-in-out;
+        }
 
+        @keyframes myanimation1{
+          0%{
+              background-color: red;      
+            }
+            50%{
+              background-color: rgb(255, 115, 0);
+            }
+            80%{
+              background-color: rgb(4, 94, 4);
+            }
+          100%{
+            background-color: rgb(173, 17, 17);
+          }  
+        }
 
 
     </style>
