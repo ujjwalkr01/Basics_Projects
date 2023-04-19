@@ -1,87 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        .container{
-            
-            width: 20%;
-            padding: 40px;
-            margin: auto;
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-            margin-top: 50px;
-        }
-        .container>div>button{
-            height: 50px;
-            width: 50px;
-            font-size: 20px;
-            font-weight: bold;
-            border-radius: 4px;
-            margin-top: 15px;
-            margin-left: 10px;
-            border: none;
-            
-        }
-        .container>input{
-            width: 240px;
-            height: 40px;
-            border-radius: 4px;
-            margin-left: 10px;
-        }
-        .container>div>button:nth-last-child(1){
-            background-color: black;
-            color: white;
-        }
-        .container>div:last-child>button:nth-child(3){
-            background-color: black;
-            color: white;
-        }
-        .container>div:last-child>button:first-child{
-            background-color: red;
-            color: white;
-        }
-        .container>div>button:hover{
-            box-shadow: rgba(243, 7, 7, 0.25) 0px 50px 100px -20px, rgba(245, 14, 14, 0.918) 0px 30px 60px -30px, rgba(243, 7, 7, 0.35) 0px -2px 6px 0px inset;
-        }
-        h1{
-            text-align: center;
-            padding-right: 5px;
-            font-size: 50px;
-            color: green;
-        }
+      .container {
+        width: 20%;
+        padding: 40px;
+        margin: auto;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        margin-top: 50px;
+      }
+      .container > div > button {
+        height: 50px;
+        width: 50px;
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 4px;
+        margin-top: 15px;
+        margin-left: 10px;
+        border: none;
+      }
+      .container > input {
+        width: 240px;
+        height: 40px;
+        border-radius: 4px;
+        margin-left: 10px;
+      }
+      .container > div > button:nth-last-child(1) {
+        background-color: black;
+        color: white;
+      }
+      .container > div:last-child > button:nth-child(3) {
+        background-color: black;
+        color: white;
+      }
+      .container > div:last-child > button:first-child {
+        background-color: red;
+        color: white;
+      }
+      .container > div > button:hover {
+        box-shadow: rgba(243, 7, 7, 0.25) 0px 50px 100px -20px,
+          rgba(245, 14, 14, 0.918) 0px 30px 60px -30px,
+          rgba(243, 7, 7, 0.35) 0px -2px 6px 0px inset;
+      }
+      h1 {
+        text-align: center;
+        padding-right: 5px;
+        font-size: 50px;
+        color: green;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Calculator</h1>
     <div class="container">
-        <input type="text">
-        <div>
-            <button >1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>+</button>
-        </div>
-        <div>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button>-</button>
-        </div>
-        <div>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button>X</button>
-        </div>
-        <div>
-            <button>C</button>
-            <button>0</button>
-            <button>=</button>
-            <button>/</button>
-        </div>
+      <input id="inputValue" type="text" />
+      <div>
+        <button class="num">1</button>
+        <button class="num">2</button>
+        <button class="num">3</button>
+        <button class="operator">+</button>
+      </div>
+      <div>
+        <button class="num">4</button>
+        <button class="num">5</button>
+        <button class="num">6</button>
+        <button class="operator">-</button>
+      </div>
+      <div>
+        <button class="num">7</button>
+        <button class="num">8</button>
+        <button class="num">9</button>
+        <button class="operator">X</button>
+      </div>
+      <div>
+        <button id="cancel">C</button>
+        <button class="num">0</button>
+        <button id="equal">=</button>
+        <button class="operator">/</button>
+      </div>
     </div>
-</body>
+  </body>
 </html>
+<script>
+  let num1 = document.querySelectorAll(".container>div>.num");
+  //console.log(num1.innerText);
+  let operations = document.getElementsByClassName("operator");
+  let display = document.getElementById("inputValue");
+  let n1 = "";
+  let n2 = "";
+  let isOperator = false;
+  let operation = "";
+  let reset=true, reset1=true;
+  for (let i = 0; i < num1.length; i++) {
+    num1[i].addEventListener("click", function (e) {
+      if (!isOperator) {
+        if(!isOperator && isCancel && reset){
+            n1="";
+            reset=false;
+        }
+        
+        n1 += e.target.innerText;
+        display.value = n1;
+      } else {
+        if(isOperator && isCancel && reset1){
+            n2="";
+            reset1=false;
+        }
+        n2 += e.target.innerText;
+        display.value = n1 + " " + operation + " " + n2;
+      }
+    });
+  }
+
+  for (let i = 0; i < operations.length; i++) {
+    operations[i].addEventListener("click", function (e) {
+      operation = e.target.innerText;
+      isOperator = true;
+      display.value = n1 + " " + operation;
+    });
+  }
+
+  let res = document.getElementById("equal");
+  res.addEventListener("click", function () {
+    if (operation == "+") {
+      display.value = Number(n1) + Number(n2);
+    } else if (operation == "-") {
+      display.value = Number(n1) - Number(n2);
+    } else if (operation == "X") {
+      display.value = Number(n1) * Number(n2);
+    } else if (operation == "/") {
+      display.value = Number(n1) / Number(n2);
+    }
+  });
+
+  let can = document.getElementById("cancel");
+  let isCancel = false;
+  can.addEventListener("click", function () {
+    display.value = "0";
+    isOperator = false;
+    isCancel=true;
+    reset=true;
+    reset1=true;
+  });
+</script>
