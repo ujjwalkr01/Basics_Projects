@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #container{
+        width: 800px;
+        height: 500px;
+        border: 2px solid black;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #container>div{
+        color: red;
+        height: 200px;
+        width: 200px;
+        margin-top: 50px;
+        margin-left: 10px;
+        border: 2px solid blue;
+        text-align: center;
+    }
+ 
+</style>
+</head>
+<body>
+    <div id="container">
+
+    </div>
+</body>
+</html>
+<script>
+
+
+let a=document.getElementById("container");
+
+
+    let arr=[{
+     name: "iphone10",
+     price:30000,
+     rating: 2
+   },
+    {
+     name: "iphone10",
+     price:30000,
+     rating: 2
+   },
+   {
+     name: "iphone10",
+     price:30000,
+     rating: 2
+   }      
+        
+  ];
+
+  for(let i=0;i<arr.length;i++){
+    let div1=document.createElement("div");
+
+    let name=document.createElement("h1");
+    name.innerText=arr[i].name;
+    
+    let price=document.createElement("h2");
+    price.innerText=arr[i].price;
+
+    let rating=document.createElement("h3");
+    rating.innerText=arr[i].rating;
+
+    div1.append(name,price,rating);
+    a.append(div1);
+
+  }
+</script>

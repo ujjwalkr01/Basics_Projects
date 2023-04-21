@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="L-username" />
+    <input type="text" id="L-password" />
+    <button id="btn">Login</button>
+    <p id="display"></p>
+
+    <br />
+    
+        <input type="text" id="username">
+        <input type="text" id="password">
+        <button id="btn1">sign up</button>
+    
+  </body>
+</html>
+<script>
+  let str = ["ujjwal@gmail.com", "shubham@gmail.com"];
+  let arr = ["u@1234", "s@1234"];
+
+  let user = document.getElementById("L-username");
+  let pass = document.getElementById("L-password");
+  let btn = document.getElementById("btn");
+  let dis = document.getElementById("display");
+  let isinvalid = false;
+  btn.addEventListener("click", function () {
+    for (let i = 0; i < str.length; i++) {
+      if (user.value == str[i] && pass.value == arr[i]) {
+        isinvalid = true;
+      }
+      if (isinvalid) {
+        dis.innerText = "you are logged in";
+        user.style.border="2px solid green";
+        pass.style.border="2px solid green";
+      } else {
+        dis.innerText = "Invalid username or password!!";
+        user.style.border="2px solid red";
+        pass.style.border="2px solid red";
+      }
+    }
+  });
+
+  let user1=document.getElementById("username");
+  let pass1=document.getElementById("password");
+  let butn=document.getElementById("btn1");
+
+  butn.addEventListener('click', function(){
+     str[str.length]=user1.value;
+     arr[arr.length]=pass1.value;
+
+    //  console.log(arr);
+    //  console.log(str);
+    //  console.log(user1.value);
+  })
+</script>

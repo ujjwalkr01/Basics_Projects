@@ -24,7 +24,7 @@
 
           <div class="form-container">
             <main>
-              <form action="https://www.facebook.com/login/?privacy_mutation_token=eyJ0eXBlIjowLCJjcmVhdGlvbl90aW1lIjoxNjgxMjM4ODg3LCJjYWxsc2l0ZV9pZCI6MjY5NTQ4NDUzMDcyMDk1MX0%3D" method="post" autocomplete="on"> 
+              <form > 
                 <input
                   id="firstname"
                   type="text"
@@ -211,15 +211,15 @@
                   <br />
                   <div class="gend" value="Female">
                     Female
-                    <input name="a" type="radio" clas="gen" />
+                    <input name="a" type="radio" clas="gen" value="Female"/>
                   </div>
                   <div class="gend" value="Male" style="margin-left: 20px">
                     Male
-                    <input name="a" type="radio" class="gen" />
+                    <input name="a" type="radio" class="gen" value="Male"  />
                   </div>
                   <div class="gend" value="Custom" style="margin-left: 20px">
                     Custom
-                    <input name="a" type="radio" class="gen" />
+                    <input name="a" type="radio" class="gen" value="Custom" />
                   </div>
                 </section>
 
@@ -250,5 +250,32 @@
         </div>
       </div>
     </div>
+    <div class="one">
+       <h1 id="name">Helllo</h1>
+       <h3 id="num">your number</h3>
+       <h3 id="date">your date</h3>
+       <h3 id="gender">your gender</h3>
+       <p>Thanks for submitting the form</p>
+    </div>
   </body>
 </html>
+<script>
+  let but=document.getElementsByClassName("but");
+  
+  but[0].addEventListener("click",clicked);
+   let head=document.getElementById("name");
+   let age=document.getElementById("num");
+   let dob=document.getElementById("date");
+   let gend=document.getElementById("gender");
+  
+  console.log(document.getElementById("firstname").value);
+  //gend[0].addEventListener("click",clicked);
+   function clicked(){
+      head.innerText="Hello : "+document.getElementById("firstname").value + "  "+ document.getElementById("lastname").value;
+      age.innerText="Your number: "+document.getElementById("mobemail").value;
+      dob.innerText=" your date of birth: "+document.getElementById("number").value+"-"+document.getElementById("month").value+"-"+document.getElementById("year").value;
+      
+       gend.innerText="your gender is: "+document.querySelector("input[type='radio'][name='a']:checked").value;
+  
+   }
+</script>

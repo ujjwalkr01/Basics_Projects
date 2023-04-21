@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <style>
+    div{
+        width: 80%;
+        height: 500px;
+        margin: auto;
+    }
+    div>img{
+        width: 100%;
+    }
+  </style>
+</head>
+<body>
+    <div>
+        <img id="i" src="" alt="">
+    </div>
+    <button id="right">></button>
+    <button id="left"><</button>
+</body>
+
+</html>
+<script>
+ let r=document.getElementById("right");
+ let l=document.getElementById("left");
+ let img=document.getElementById("i");
+
+
+ let imgArr=["https://tse1.mm.bing.net/th?id=OIP.E9iPyTLlln60HynLC4JCBQHaE8&pid=Api&P=0"
+ ,"https://tse3.explicit.bing.net/th?id=OIP.4d7Emr_d4fJnEE6zK7pj_wHaFK&pid=Api&P=0"
+ ,"https://tse3.mm.bing.net/th?id=OIP.A509_rYAmNnf0iOkP89XOQHaEw&pid=Api&P=0"];
+
+let cur=0;
+img.setAttribute("src",imgArr[cur]);
+
+ r.addEventListener('click',function(){
+    cur++;
+    if(cur==imgArr.length){
+        cur=0;
+        
+    }
+       
+     img.setAttribute("src",imgArr[cur]);
+   
+  
+    
+ })
+ l.addEventListener('click',function(){
+    cur--;
+    if(cur==-1){
+       cur=imgArr.length-1;
+    }
+       
+    img.setAttribute("src",imgArr[cur]);
+    
+    
+    
+ })
+
+
+
+</script>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        div{
+            width: 500px;
+            height: 500px;
+            border: 2px solid black;
+        }
+        #container>div>div{
+            width: 400px;
+            height: 400px;
+            border: 2px solid blue;
+        }
+        #container>div>div>h1{
+           color: red;
+            
+        }
+        
+    </style>
+</head>
+<body>
+   <div id="container">
+       <div>
+        <div>
+
+        </div>
+       </div>
+   </div> 
+</body>
+</html>
+<script>
+    let a=document.getElementById("container");
+    let b=document.querySelector("#container>div>div");
+    let heading=document.createElement("h1"); //creating
+    heading.innerText="hello world"; //assigning the value 
+    b.append(heading); //putting value in body
+</script>
