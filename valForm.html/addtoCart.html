@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>In Your Cart :- <span id="counter">0</span></h2>
+      <button id="Add">Add To Cart</button>
+      <button id="Remove"> Delete</button>  
+
+
+
+
+
+      </body>
+    <script>
+        let add=document.getElementById("Add");
+        let rem =document.getElementById("Remove");
+        let counter=document.getElementById("counter");
+        let count=localStorage.getItem("cart");
+        counter.innerText=localStorage.getItem("cart");
+
+        
+        add.addEventListener('click',function() {
+          count++;
+          counter.innerText=count;
+          localStorage.setItem("cart",count);
+            
+        })
+        rem.addEventListener('click',function() {
+          count--;
+          counter.innerText=count;
+          localStorage.setItem("cart",count);
+            
+        })
+
+
+
+    </script>
+</html>

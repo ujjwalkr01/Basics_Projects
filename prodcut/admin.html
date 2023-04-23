@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        #container{
+            display: flex;
+            border: 1px solid grey;
+        }
+      #admin-sec{
+        background-color: black;
+        color: white;
+        width: 12rem;
+        height: 40rem;
+        padding: 10px;
+      }
+      #admin-sec>p{
+        font-size: 20px;
+      }
+      #addPro_sec{
+        width: 100rem;
+       height: 40rem;
+
+    
+      }
+      #addPro_sec>h1{
+        text-align: center;
+        /* margin-left: 40rem; */
+        font-size: 45px;
+        font-weight: bold;
+        margin-bottom: 80px;
+      }
+      /* #btn1{
+         height: 2rem;
+         margin: 1rem;
+      } */
+      #form_sec{
+         margin:auto;
+         width: 35rem;
+         box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+         margin-top: 5rem;
+         padding: 20px;
+      }
+      #form_sec>h1{
+        text-align: center;
+        margin-bottom: 50px;
+        text-shadow: 2px 1px gray;
+      }
+      #form_sec>input{
+        width: 90%;
+        height: 45px;
+        margin-bottom: 20px;
+        font-size: 20px;
+        border: none;
+        border-bottom: 2px solid rgb(68, 68, 68);
+        margin-left: 1rem;
+        color: black;
+      }
+      #btn1{
+        margin-top: 1rem;
+        margin-left: 150px;
+        padding: 15px 80px;
+        font-size: 18px;
+        border: none;
+        font-weight: bold;
+        background-color: rgb(224, 168, 13);
+        border-radius: 4px;
+        margin-bottom: 1rem;
+      }
+    </style>
+</head>
+<body>
+    <div id="container">
+    <div id="admin-sec">
+        <h1 class="heading">Admin</h1> <hr>
+        <p>Profile</p><hr>
+        <p>Categories</p><hr>
+        <p>Browse Categories</p><hr>
+        <p>Add Products</p><hr>
+        <p>View Products</p><hr>
+        <p>New user requests</p><hr>
+        <p>View user</p><hr>
+    </div>
+    <div id="addPro_sec">
+       
+    <div id="form_sec">
+        <h1>Add Products</h1>
+        <input id="pName" type="text" placeholder="Enter the product name" required><br>
+        <input id="pInfo" type="text" placeholder="Enter the prodcut type" required><br>
+        <input id="pPrice" type="text" placeholder="Enter the product price" required><br>
+        <input id="pImage" type="url" placeholder="Enter the product image url" ><br>
+        <button id="btn1" type="submit">Submit</button>
+    </div>
+    </div> 
+</div>
+</body>
+</html>
+<script>
+  let proName=document.getElementById("pName");
+  let proInfo=document.getElementById("pInfo");
+  let proPrice=document.getElementById("pPrice");
+  let proImg=document.getElementById("pImage");
+  
+  let btn=document.getElementById("btn1");
+  let arr=JSON.parse(localStorage.getItem("proDetails"));
+  if(arr==null){
+    arr=[];
+  }
+
+  btn.addEventListener('click',function(){
+
+    let item={
+        itmName:proName.value,
+        itmInfo:proInfo.value,
+        itmPrice:proPrice.value,
+       // itmImg:proImg.value,
+    }
+    arr.push(item);
+    localStorage.setItem("proDetails",JSON.stringify(arr));
+    console.log(arr);
+  })
+</script>

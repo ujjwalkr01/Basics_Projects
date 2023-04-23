@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            border: 2px solid red;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #container>div{
+            width: 200px;
+            height: 200px;
+            margin-left: 20px;
+            border: 3px solid black;
+        }
+        #container>div>h1{
+            color: aquamarine;
+        }
+        #container>div>h2{
+            color: brown;
+        }
+       
+
+    </style>
+</head>
+<body>
+    <div id="container">
+          
+    </div>
+    <br>
+    <br>
+    <input type="text" id="name" placeholder="name">
+    <input type="text" id="rating" placeholder="rating">
+    <input type="text" id="price" placeholder="price">
+    <button id="btn"> ADD</button>
+</body>
+</html>
+<script>
+    let a=document.getElementById("container");
+  
+    // let heading=document.createElement("h1"); ///creating
+    //  heading.innerText="gggg" ///inserting value
+    // a.append(heading); // putting
+
+    
+let arr=JSON.parse(localStorage.getItem("products"));// step-2
+
+
+if(arr==null){ // step-3
+    arr=[];
+}
+
+let iname=document.getElementById("name");
+let irating=document.getElementById("rating");
+let iprice=document.getElementById("price");
+let ibtn=document.getElementById("btn");
+
+
+ibtn.addEventListener('click',function(){
+
+let obj={
+    name:iname.value,
+    rating:irating.value,
+    price:iprice.value
+}   
+arr.push(obj);
+localStorage.setItem("products",JSON.stringify(arr));// step -1
+
+
+        let div1=document.createElement("div");
+
+          let name=document.createElement("h1");
+          name.innerText=arr[arr.length-1].name; 
+         
+          let rating=document.createElement("h2");
+          rating.innerText=arr[arr.length-1].ratings; 
+          
+          let price=document.createElement("h3");     /// div : name
+          price.innerText=arr[arr.length-1].price; 
+
+         div1.append(name,rating,price)
+
+          a.append(div1);
+
+
+})
+   
+
+
+</script>
