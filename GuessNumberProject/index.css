@@ -15,24 +15,29 @@ body {
   margin: auto;
   color: #fff;
 }
-h1 {
+/* h1 {
   width: 100%;
   margin-top: 1rem;
   margin-bottom: 5rem;
   text-align: center;
   padding: 30px;
-}
-.btwn {
+} */
+/* .btwn {
   position: absolute;
   top: 1rem;
   right: 2rem;
+} */
+header>div:first-child{
+   display: flex;
+   justify-content: space-between;
+   padding: 2rem 0.8rem;
 }
 .resetbtn {
   font-size: 1.1rem;
   padding: 2rem 1rem;
-  position: absolute;
-  top: 1rem;
-  left: 2rem;
+  /* position: absolute; */
+  /* top: 1rem;
+  left: 2rem; */
   border-radius: 6px;
   border: none;
   background-color: #bbb4b4;
@@ -41,7 +46,7 @@ h1 {
 }
 .number {
   display: flex;
-  margin-top: 1.5rem;
+  margin-top: 5rem;
   margin-bottom: 2.5rem;
 }
 hr {
@@ -106,3 +111,29 @@ hr {
 .score_label {
   margin-bottom: 2rem;
 }
+@media only screen and (max-width:768px) {
+  header>div:first-child{
+    flex-direction: column;
+  }
+  h1{
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 2rem;
+  }
+  .btwn{
+    margin-top: 2rem;
+    text-align: center;
+  }
+  .left_right{
+    flex-direction: column;
+    align-items: center;
+  }
+  .guessNum{
+    width:19rem;
+  }
+  .checkBtn{
+    margin-bottom: 2rem;
+  }
+}
+
+
