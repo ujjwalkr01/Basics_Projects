@@ -3,7 +3,6 @@ let audioTurn = new Audio("cartoon-jump.mp3");
 let gameOver = new Audio("negative_beeps.mp3");
 
 let turn = "X";
-// let player=[0,1];
 let isgameOver = false;
 
 //function to change the turn...
@@ -24,27 +23,27 @@ const checkWin = () => {
     [0, 4, 8],
     [2, 4, 6],
   ];
-  wins.forEach(e => {
+  wins.forEach((e) => {
     if (
-      (boxtext[e[0]].innerText === boxtext[e[1]].innerText) &&
-      (boxtext[e[2]].innerText === boxtext[e[1]].innerText) &&
-      (boxtext[e[0]].innerText!== "")
+      boxtext[e[0]].innerText === boxtext[e[1]].innerText &&
+      boxtext[e[2]].innerText === boxtext[e[1]].innerText &&
+      boxtext[e[0]].innerText !== ""
     ) {
       document.querySelector(".info").innerText =
         boxtext[e[0]].innerText + " won";
-       isgameOver = true;
-       if(boxtext[e[0]].innerText === "X"){
-       alert(`Congratulations! Player1 wins`);
-       }else if(boxtext[e[0]].innerText === "0"){
+      isgameOver = true;
+      if (boxtext[e[0]].innerText === "X") {
+        alert(`Congratulations! Player1 wins`);
+      } else if (boxtext[e[0]].innerText === "0") {
         alert(`Congratulations! Player2 wins`);
-       }
+      }
     }
   });
 };
 
 //Game Logic
 let boxes = document.getElementsByClassName("box");
-let count=0;
+let count = 0;
 Array.from(boxes).forEach((element) => {
   let boxtext = element.querySelector(".boxtext");
   element.addEventListener("click", () => {
@@ -54,13 +53,14 @@ Array.from(boxes).forEach((element) => {
       audioTurn.play();
       checkWin();
       if (!isgameOver) {
-        document.getElementsByClassName("info")[0].innerText =
-          `Turn for  ${turn}`;
-          count++;
-          //console.log(count);
-          if(count==9){
-            alert(`Draw!`);
-          }
+        document.getElementsByClassName(
+          "info"
+        )[0].innerText = `Turn for  ${turn}`;
+        count++;
+        //console.log(count);
+        if (count == 9) {
+          alert(`Draw!`);
+        }
       }
     }
   });
