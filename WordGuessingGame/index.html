@@ -1,0 +1,113 @@
+<html>
+  <head>
+    <title>Bollywood Word Guessing Game</title>
+    <style>
+      .word {
+        display: flex;
+        justify-content: center;
+        margin: 20px;
+      }
+      .letter {
+        display: inline-block;
+        width: 30px;
+        height: 40px;
+        border: 1px solid black;
+        text-align: center;
+        font-size: 30px;
+        margin-right: 5px;
+      }
+      .chances {
+        text-align: center;
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Bollywood Word Guessing Game</h1>
+    <div class="word">
+      <div class="letter"></div>
+      <div class="letter"></div>
+      <div class="letter"></div>
+      <div class="letter"></div>
+      <div class="letter"></div>
+    </div>
+
+    <div class="chances" id="guesses">Chances Left : 5</div>
+
+    <h3 id="answer"></h3>
+  </body>
+</html>
+<script>
+    let word = ["a", "c", "t", "o", "r"];
+    let resWord = word.join("");
+    //console.log(resWord);
+    let letterDiv = document.querySelectorAll(".letter");
+    let countChance = document.getElementById("guesses");
+    let heading=document.getElementById('answer');
+    let remGuess = 5;
+    countChance.textContent = `Chances Left : ${remGuess}`;
+    let currWord = "";
+    let count = 0;
+    document.addEventListener("keydown", function (e) { 
+      if (word.includes(e.key)) {
+        let indx=word.indexOf(e.key);
+        if(letterDiv[indx].textContent==''){
+          letterDiv[indx].textContent = e.key;
+        }else{
+            let index=word.indexOf(e.key,indx+1);
+            letterDiv[index].textContent = e.key;
+        }
+        count++;
+        if(count==5){
+            alert('Congratulations!');
+       }
+      }else{
+          remGuess--;
+          countChance.textContent = `Chances Left : ${remGuess}`;
+            if(remGuess===0){
+              alert(`You've run out of guesses!`);
+               heading.textContent=`Answer is ${resWord}`;
+           }else{
+              alert(`Wrong guess! ${remGuess} guesses remaining.`);
+           }
+       } 
+ 
+});
+
+// let letters=document.getElementsByClassName("letter");
+
+// let chan=document.getElementById("guesses");
+// let display=document.getElementById("answer")
+
+
+// let word="bolly";
+// let cur=0;
+// let chances=5;
+// document.addEventListener("keypress",(e)=>{
+//     e.preventDefault();
+//   if(word.includes(e.key)){
+//    let index= word.indexOf(e.key);
+//    let element=e.key;
+//    if(letters[index].textContent ==""){
+//     letters[index].textContent=element
+//    }else{
+//     let index2=word.indexOf(e.key,index+1)
+//     letters[index2].textContent=element
+//    }
+//     cur++;
+//     if(cur==5){
+//         alert("Congratulations!")
+//     }
+//   }else{
+//     --chances;
+//     alert(`Wrong guess! ${chances} guesses remaining.`)
+//      chan.textContent=`Chances Left : ${chances}`
+//      if(chances==0){
+//         alert("You've run out of guesses! Game over!")
+//        display.textContent=`Answer is ${word}`
+//      }
+//   }
+
+// })
+</script>

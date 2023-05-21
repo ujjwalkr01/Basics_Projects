@@ -32,6 +32,7 @@ const checkWin = () => {
       document.querySelector(".info").innerText =
         boxtext[e[0]].innerText + " won";
       isgameOver = true;
+      
       if (boxtext[e[0]].innerText === "X") {
         alert(`Congratulations! Player1 wins`);
       } else if (boxtext[e[0]].innerText === "0") {
