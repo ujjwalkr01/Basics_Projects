@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      text-here {
+        font-size: 55px;
+        font-family: sans-serif;
+        color: black;
+        text-decoration: none;
+        font-style: normal;
+        font-weight: normal;
+        line-height: normal;
+        text-align: left;
+        letter-spacing: normal;
+        word-spacing: normal;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="text-here" id="text-container">This is some example text</div>
+    <label>Change Text Color:</label>
+    <input type="text" id="colorbox" />
+    <button id="colorchange">Change Color</button><br />
+
+    <label>Change Font Size:</label>
+    <input type="range" id="fontsize" value="55" min="10" max="100" /><br />
+
+    <button id="underline" class="stylebt">Underline</button>
+    <button id="italic" class="stylebt">Italic</button>
+    <button id="bold" class="stylebt">Bold</button><br />
+
+    <label>Change Font Family:</label>
+    <select id="list">
+      <option value="serif">Serif</option>
+      <option value="sans-serif">Sans-Serif</option>
+      <option value="monospace">Monospace</option>
+      <option value="cursive">Cursive</option>
+      <option value="fantasy">Fantasy</option></select
+    ><br />
+
+    <button id="getstyle">Get CSS Properties</button><br />
+
+    <p id="css-props"></p>
+  </body>
+</html>
+<script>
+  /*changing the color part*/
+  let text = document.getElementById("text-container");
+  //console.log(text.textContent);
+  let userinput = document.getElementById("colorbox");
+  let btnChangecolor = document.getElementById("colorchange");
+
+  btnChangecolor.addEventListener("click", function (e) {
+    text.style.color = userinput.value;
+  });
+
+  /*Changing the size as per the  slider*/
+  let slider = document.getElementById("fontsize");
+  slider.addEventListener("input", function () {
+    text.style.fontSize = slider.value + "px";
+  });
+
+  /*Change the font styles*/
+  let btnStyle = document.querySelectorAll(".stylebt");
+  let count = 0;
+  btnStyle.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (btn.textContent === "Underline") {
+        if (text.style.textDecoration === "underline") {
+          text.style.textDecoration = "none";
+        } else {
+          text.style.textDecoration = "underline";
+        }
+      } else if (btn.textContent === "Italic") {
+        if (text.style.fontStyle === "italic") {
+          text.style.fontStyle = "normal";
+        } else {
+          text.style.fontStyle = "italic";
+        }
+      } else {
+        if (text.style.fontWeight === "bold") {
+          text.style.fontWeight = "normal";
+        } else {
+          text.style.fontWeight = "bold";
+        }
+      }
+    });
+  });
+  /*Change the font-family*/
+  let fontList = document.getElementById("list");
+  fontList.addEventListener("change", () => {
+    text.style.fontFamily = fontList.value;
+  });
+
+  /*getting the Css Property*/
+  let btnGetstyle = document.getElementById("getstyle");
+  let ptag = document.getElementById("css-props");
+
+  btnGetstyle.addEventListener("click", () => {
+    ptag.textContent = `color: ${text.style.color}; font-size: ${slider.value}px; text-decoration: ${text.style.textDecoration}; font-style: ${text.style.fontStyle}; font-weight: ${text.style.fontWeight}; font-family: ${text.style.fontFamily};`;
+  });
+</script>
